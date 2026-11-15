@@ -1,0 +1,187 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Ly Fragranza — Perfumería Original</title>
+  <meta name="description" content="Ly Fragranza · Perfumería Original. Perfumes originales para mujer, hombre y unisex. Pedido fácil por WhatsApp." />
+  <link rel="icon" href="logo/logo.webp" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@400;500;600&family=Jost:wght@300;400;500&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="styles.css" />
+</head>
+<body>
+
+  <!-- ===== TOPBAR ===== -->
+  <div class="topbar">Envíos a todo el país · Perfumería 100% original</div>
+
+  <!-- ===== HEADER ===== -->
+  <header class="header" id="inicio">
+    <div class="header__inner container">
+      <div class="header__left">
+        <button class="menu-toggle" id="menuToggle" aria-label="Menú">☰</button>
+        <nav class="nav nav--left">
+          <a href="#catalogo">Catálogo</a>
+          <a href="#mujer" data-filter="mujer">Mujer</a>
+          <a href="#hombre" data-filter="hombre">Hombre</a>
+          <a href="#unisex" data-filter="unisex">Unisex</a>
+        </nav>
+      </div>
+
+      <a href="#inicio" class="brand">
+        <img src="logo/logo.webp" alt="Ly Fragranza" class="brand__logo" />
+      </a>
+
+      <div class="header__right">
+        <nav class="nav nav--right">
+          <a href="#nosotros">Nosotros</a>
+          <a href="#contacto">Contacto</a>
+        </nav>
+        <button class="cart-btn" id="openCart" aria-label="Carrito">
+          Carrito <span id="cartCount">(0)</span>
+        </button>
+      </div>
+    </div>
+    <!-- menú móvil -->
+    <nav class="nav-mobile" id="navMobile">
+      <a href="#catalogo">Catálogo</a>
+      <a href="#mujer" data-filter="mujer">Mujer</a>
+      <a href="#hombre" data-filter="hombre">Hombre</a>
+      <a href="#unisex" data-filter="unisex">Unisex</a>
+      <a href="#nosotros">Nosotros</a>
+      <a href="#contacto">Contacto</a>
+    </nav>
+  </header>
+
+  <!-- ===== CARRUSEL / PORTADA ===== -->
+  <section class="carousel" id="inicioCarrusel" aria-label="Portada">
+    <div class="carousel__track" id="carruselTrack"><!-- slides por JS --></div>
+
+    <button class="carousel__arrow carousel__arrow--prev" id="carPrev" aria-label="Anterior">‹</button>
+    <button class="carousel__arrow carousel__arrow--next" id="carNext" aria-label="Siguiente">›</button>
+
+    <div class="carousel__dots" id="carDots"><!-- puntos por JS --></div>
+  </section>
+
+  <!-- ===== COLECCIONES ===== -->
+  <section class="colecciones">
+    <div class="container coleccion__grid">
+      <a href="#catalogo" class="coleccion" data-filter="mujer">
+        <img src="colecciones/mujer.webp" alt="Perfumes para mujer" />
+        <div class="coleccion__info">
+          <span class="coleccion__kicker">Colección Mujer</span>
+          <h3 class="coleccion__title">Perfumes Mujer</h3>
+        </div>
+      </a>
+      <a href="#catalogo" class="coleccion" data-filter="hombre">
+        <img src="colecciones/hombre.webp" alt="Perfumes para hombre" />
+        <div class="coleccion__info">
+          <span class="coleccion__kicker">Colección Hombre</span>
+          <h3 class="coleccion__title">Perfumes Hombre</h3>
+        </div>
+      </a>
+      <a href="#catalogo" class="coleccion" data-filter="unisex">
+        <img src="colecciones/unixes.webp" alt="Perfumes unisex" />
+        <div class="coleccion__info">
+          <span class="coleccion__kicker">Colección Unisex</span>
+          <h3 class="coleccion__title">Perfumes Unisex</h3>
+        </div>
+      </a>
+      <a href="#catalogo" class="coleccion" data-filter="todos">
+        <img src="colecciones/nicho.webp" alt="Perfumes nicho" />
+        <div class="coleccion__info">
+          <span class="coleccion__kicker">Alta Perfumería</span>
+          <h3 class="coleccion__title">Perfumes Nicho</h3>
+        </div>
+      </a>
+    </div>
+  </section>
+
+  <!-- ===== CATALOGO ===== -->
+  <section class="catalog" id="catalogo">
+    <div class="container">
+      <div class="section-head">
+        <span class="section-kicker">Colección</span>
+        <h2 class="section-title">Nuestros perfumes</h2>
+      </div>
+
+      <div class="filters" id="filters">
+        <button class="filter is-active" data-filter="todos">Todos</button>
+        <button class="filter" data-filter="mujer">Mujer</button>
+        <button class="filter" data-filter="hombre">Hombre</button>
+        <button class="filter" data-filter="unisex">Unisex</button>
+      </div>
+
+      <div class="grid" id="productGrid"><!-- JS --></div>
+    </div>
+  </section>
+
+  <!-- ===== NOSOTROS ===== -->
+  <section class="about" id="nosotros">
+    <div class="container about__inner">
+      <div class="about__media">
+        <img src="logo/logo.webp" alt="Ly Fragranza" />
+      </div>
+      <div class="about__text">
+        <span class="section-kicker">Nosotros</span>
+        <h2 class="section-title">Fragancias con identidad</h2>
+        <p>
+          En Ly Fragranza seleccionamos cada perfume pensando en ti. Trabajamos
+          únicamente con <strong>productos originales</strong>, porque creemos que
+          una buena fragancia es una firma personal.
+        </p>
+        <p>
+          Atención cercana, asesoría honesta y envíos a todo el país.
+        </p>
+      </div>
+    </div>
+  </section>
+
+  <!-- ===== CONTACTO ===== -->
+  <section class="contact" id="contacto">
+    <div class="container contact__inner">
+      <span class="section-kicker">Contacto</span>
+      <h2 class="section-title">Hablemos de tu próxima fragancia</h2>
+      <p>Te asesoramos por WhatsApp y resolvemos todas tus dudas.</p>
+      <a class="btn btn--dark" id="contactWhatsapp" href="#">Escríbenos por WhatsApp</a>
+      <p class="contact__phone">318 570 5180</p>
+    </div>
+  </section>
+
+  <!-- ===== FOOTER ===== -->
+  <footer class="footer">
+    <div class="container footer__inner">
+      <img src="logo/logo.webp" alt="Ly Fragranza" class="footer__logo" />
+      <nav class="footer__nav">
+        <a href="#catalogo">Catálogo</a>
+        <a href="#nosotros">Nosotros</a>
+        <a href="#contacto">Contacto</a>
+      </nav>
+      <p class="footer__copy">© <span id="year"></span> Ly Fragranza · Perfumería Original</p>
+    </div>
+  </footer>
+
+  <a class="wa-float" id="waFloat" href="#" aria-label="WhatsApp">
+    <svg viewBox="0 0 32 32" width="26" height="26" fill="currentColor"><path d="M16 3C9.4 3 4 8.4 4 15c0 2.1.6 4.1 1.6 5.9L4 29l8.3-1.6c1.7.9 3.6 1.4 5.7 1.4 6.6 0 12-5.4 12-12S22.6 3 16 3zm0 21.8c-1.8 0-3.5-.5-5-1.4l-.4-.2-4.9 1 1-4.8-.2-.4c-1-1.6-1.5-3.4-1.5-5.3C5 9.5 9.9 4.6 16 4.6S27 9.5 27 15.6 22.1 24.8 16 24.8zm6.1-7.3c-.3-.2-2-1-2.3-1.1-.3-.1-.5-.2-.8.2-.2.3-.9 1.1-1.1 1.3-.2.2-.4.2-.7.1-.3-.2-1.4-.5-2.6-1.6-1-.9-1.6-2-1.8-2.3-.2-.3 0-.5.1-.6.1-.1.3-.4.5-.6.1-.2.2-.3.3-.5.1-.2 0-.4 0-.6-.1-.2-.8-1.9-1-2.5-.3-.7-.5-.6-.8-.6h-.6c-.2 0-.5.1-.8.4-.3.3-1 1-1 2.5s1.1 2.9 1.2 3.1c.2.2 2.1 3.2 5 4.5.7.3 1.3.5 1.7.6.7.2 1.4.2 1.9.1.6-.1 2-.8 2.2-1.6.3-.8.3-1.4.2-1.6-.1-.1-.3-.2-.6-.3z"/></svg>
+  </a>
+
+  <!-- ===== CARRITO ===== -->
+  <div class="cart-overlay" id="cartOverlay"></div>
+  <aside class="cart" id="cart" aria-hidden="true">
+    <div class="cart__head">
+      <h3>Tu carrito</h3>
+      <button class="cart__close" id="closeCart" aria-label="Cerrar">✕</button>
+    </div>
+    <div class="cart__items" id="cartItems">
+      <p class="cart__empty">Tu carrito está vacío.</p>
+    </div>
+    <div class="cart__foot">
+      <div class="cart__total"><span>Total</span><strong id="cartTotal">$0</strong></div>
+      <button class="btn btn--whatsapp btn--full" id="checkoutWhatsapp">Finalizar por WhatsApp</button>
+    </div>
+  </aside>
+
+  <script src="script.js"></script>
+</body>
+</html>
