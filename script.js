@@ -221,13 +221,17 @@ function checkout() {
     msg += `• ${cart[id]} x ${p.nombre} — ${money(p.precio * cart[id])}\n`;
   });
   msg += `\nTotal: ${money(cartTotal())}\n\n¿Me confirmas disponibilidad y envío?`;
-  window.open(waLink(msg), "_blank");
+  window.open(waLink(msg), "_blank", "noopener");
 }
 $("#checkoutWhatsapp").addEventListener("click", checkout);
 
 const saludo = "¡Hola Ly Fragranza! Me gustaría más información sobre sus perfumes.";
-$("#waFloat").href = waLink(saludo);
-$("#contactWhatsapp").href = waLink(saludo);
+[ "#waFloat", "#contactWhatsapp" ].forEach((sel) => {
+  const el = $(sel);
+  el.href = waLink(saludo);
+  el.target = "_blank";
+  el.rel = "noopener noreferrer";
+});
 
 /* ---------- MENÚ MÓVIL ---------- */
 $("#menuToggle").addEventListener("click", () => $("#navMobile").classList.toggle("is-open"));

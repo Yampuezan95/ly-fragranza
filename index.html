@@ -3,6 +3,9 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <!-- Seguridad: controla de dónde se puede cargar contenido y evita clickjacking -->
+  <meta http-equiv="Content-Security-Policy" content="default-src 'self'; img-src 'self' data:; style-src 'self' 'unsafe-inline' https://fonts.googleapis.com; font-src https://fonts.gstatic.com; script-src 'self'; connect-src 'self'; base-uri 'self'; frame-ancestors 'none'; object-src 'none'" />
+  <meta name="referrer" content="strict-origin-when-cross-origin" />
   <title>Ly Fragranza — Perfumería Original</title>
   <meta name="description" content="Ly Fragranza · Perfumería Original. Perfumes originales para mujer, hombre y unisex. Pedido fácil por WhatsApp." />
   <link rel="icon" href="logo/logo.webp" />
