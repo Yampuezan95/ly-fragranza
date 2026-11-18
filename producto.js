@@ -24,6 +24,31 @@ if (!p) {
   const a = atributos(p);
   const media = p.img ? `<img src="${p.img}" alt="${p.nombre}">` : bottleSVG(p.categoria);
 
+  /* ----- Productos relacionados (misma categoría primero) ----- */
+  const mismaCat = PRODUCTOS.filter((x) => x.id !== p.id && x.categoria === p.categoria);
+  const otros = PRODUCTOS.filter((x) => x.id !== p.id && x.categoria !== p.categoria);
+  const mezcla = (arr) => arr.map((v) => [Math.random(), v]).sort((m, n) => m[0] - n[0]).map((m) => m[1]);
+  const relacionados = [...mezcla(mismaCat), ...mezcla(otros)].slice(0, 8);
+
+  const miniCard = (r) => {
+    const rmedia = r.img ? `<img src="${r.img}" alt="${r.nombre}">` : bottleSVG(r.categoria);
+    return `
+      <a class="minicard" href="producto.html?id=${r.id}">
+        <div class="minicard__media">${r.tag ? `<span class="card__tag">${r.tag}</span>` : ""}${rmedia}</div>
+        <p class="minicard__cat">${catLabel[r.categoria]}</p>
+        <h3 class="minicard__name">${r.nombre}</h3>
+        <p class="minicard__price">${money(r.precio)}</p>
+      </a>`;
+  };
+  const relacionadosHTML = `
+    <section class="related">
+      <div class="related__head">
+        <h2 class="section-title">También te puede gustar</h2>
+        <span class="related__hint">Desliza para ver más →</span>
+      </div>
+      <div class="related__row">${relacionados.map(miniCard).join("")}</div>
+    </section>`;
+
   const barra = (label, valor) => `
     <div class="meter">
       <div class="meter__top"><span>${label}</span><span>${valor}/10</span></div>
@@ -87,6 +112,8 @@ if (!p) {
         <p class="pdp__note">* Valores de referencia estimados según concentración y familia.</p>
       </section>
     </div>
+
+    ${relacionadosHTML}
   `;
 
   /* Cantidad */
