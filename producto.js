@@ -131,6 +131,40 @@ if (!p) {
     el.rel = "noopener noreferrer";
   }
   updateBuy();
+
+  /* ----- Auto-desplazamiento del carrusel de relacionados ----- */
+  (() => {
+    const row = $(".related__row");
+    if (!row) return;
+    const paso = () => {
+      const card = row.querySelector(".minicard");
+      return card ? card.getBoundingClientRect().width + 20 : 240; // ancho card + gap
+    };
+    let pausado = false;
+    const casiAlFinal = () => row.scrollLeft + row.clientWidth >= row.scrollWidth - 5;
+
+    const avanzar = () => {
+      if (pausado) return;
+      if (row.scrollWidth <= row.clientWidth) return; // no hay desborde
+      if (casiAlFinal()) row.scrollTo({ left: 0, behavior: "smooth" });
+      else row.scrollBy({ left: paso(), behavior: "smooth" });
+    };
+
+    let timer = setInterval(avanzar, 3000);
+
+    // Pausa al interactuar (mouse o táctil)
+    ["mouseenter", "touchstart", "pointerdown"].forEach((ev) =>
+      row.addEventListener(ev, () => { pausado = true; }, { passive: true })
+    );
+    ["mouseleave", "touchend"].forEach((ev) =>
+      row.addEventListener(ev, () => { pausado = false; }, { passive: true })
+    );
+    // Pausa si la pestaña no está visible (ahorra recursos)
+    document.addEventListener("visibilitychange", () => {
+      clearInterval(timer);
+      if (!document.hidden) timer = setInterval(avanzar, 3000);
+    });
+  })();
 }
 
 /* WhatsApp flotante */
