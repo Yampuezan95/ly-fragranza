@@ -66,6 +66,16 @@ const PRODUCTOS = [
   { id: 38, nombre: "Light Blue Intense (Dolce & Gabbana)", categoria: "hombre", precio: 380000, tag: "", desc: "EDP 100 ml · Amaderada acuática salina, marina y versátil.", img: "imegen_perfumes/38.webp" },
   { id: 39, nombre: "9PM Clásica (Afnan)",     categoria: "hombre", precio: 199000, tag: "", desc: "EDP 100 ml · Vainilla oriental muy dulce, gran rendimiento (clon de Ultra Male).", img: "imegen_perfumes/39.webp" },
   { id: 40, nombre: "9PM Night Out (Afnan)",   categoria: "unisex", precio: 290000, tag: "", desc: "Extrait 100 ml · Oriental especiada y frutal, amaderada y resinosa, para noche.", img: "imegen_perfumes/40.webp" },
+  { id: 41, nombre: "Valentino Born in Roma Intense", categoria: "hombre", precio: 750000, tag: "Top", desc: "EDP Intense 100 ml · Vainilla oriental con lavanda y vetiver, refinada para noche y diario.", img: "imegen_perfumes/41.webp" },
+  { id: 42, nombre: "Delilah (Maison Alhambra)", categoria: "mujer", precio: 180000, tag: "", desc: "EDP 100 ml · Floral frutal con rosa jugosa, cremosa y polvosa (clon de PDM Delina).", img: "imegen_perfumes/42.webp" },
+  { id: 43, nombre: "Turathi Azul (Afnan)",    categoria: "hombre", precio: 250000, tag: "", desc: "EDP 90 ml · Aromática acuática fresca, cítrica y amaderada, versátil para el día.", img: "imegen_perfumes/43.webp" },
+  { id: 44, nombre: "Boss in Motion",          categoria: "hombre", precio: 210000, tag: "", desc: "EDT 100 ml · Fougère oriental con naranja cremosa y especias, cálido para el día a día.", img: "imegen_perfumes/44.webp" },
+  { id: 45, nombre: "Club de Nuit Intense Man (Armaf)", categoria: "hombre", precio: 280000, tag: "Top", desc: "EDT 100 ml · Afrutada amaderada ahumada, gran estela y duración (clon de Creed Aventus).", img: "imegen_perfumes/45.webp" },
+  { id: 46, nombre: "Al Nashama Caprice (Lattafa)", categoria: "unisex", precio: 190000, tag: "", desc: "EDP 100 ml · Aromática fougère amaderada, lavanda y especias, elegante (clon de YSL La Nuit Bleu Électrique).", img: "imegen_perfumes/46.webp" },
+  { id: 47, nombre: "Bade'e Al Oud Oud for Glory (Lattafa)", categoria: "unisex", precio: 170000, tag: "Top", desc: "EDP 100 ml · Oud amaderado oscuro y resinoso con azafrán, intenso (clon de Initio Oud for Greatness).", img: "imegen_perfumes/47.webp" },
+  { id: 48, nombre: "Bade'e Al Oud Amethyst (Lattafa)", categoria: "unisex", precio: 170000, tag: "", desc: "EDP 100 ml · Oud con rosa y vainilla, elegante y de gran duración, para noche y eventos.", img: "imegen_perfumes/48.webp" },
+  { id: 49, nombre: "Bade'e Al Oud Sublime (Lattafa)", categoria: "unisex", precio: 170000, tag: "", desc: "EDP 100 ml · Frutal fresca con manzana y lichi, jugosa y limpia, para diario y clima cálido.", img: "imegen_perfumes/49.webp" },
+  { id: 50, nombre: "Bade'e Al Oud Honor & Glory (Lattafa)", categoria: "unisex", precio: 170000, tag: "", desc: "EDP 100 ml · Frutal gourmand con piña y crème brûlée, cálida y especiada, para noche y clima fresco.", img: "imegen_perfumes/50.webp" },
 ];
 
 /* ---------- ILUSTRACIÓN DE FRASCO (SVG) ----------
